@@ -26,6 +26,10 @@ function [thisKnn, KnnMatrix, KnnIdx, KnnDist] = mutualKnnMatrix(features, varar
 
     KnnMatrixFileName = ['KNNMatrix/KnnMatrix_',DataSetName,'.mat'];
 
+    if ~exist('KNNMatrix','dir')
+        mkdir('KNNMatrix');
+    end
+
     KnnIdx = [];
     KnnDist = [];
     KnnMatrix = [];
